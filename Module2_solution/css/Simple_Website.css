@@ -1,0 +1,40 @@
+/* Declaring 3 different selector */
+/* Element Selector is         p{   */
+/* Class   Selector is Dot    .p{   */
+/* ID      Selector is pound  #p{   */
+  
+/** Title **/
+title {
+  color: green;
+  font-size: 36px;
+  text-align: center;
+}
+
+/** Header 1 **/
+h1 {
+  color: green;
+  font-size: 36px;
+  text-align: center;
+}
+
+/** Header 2 **/
+h2 {
+  color: green;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Paragraph */
+p {
+  color: blue;
+  font-size: 20px;
+  width: 200px;
+}
+
+/* Body */
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color: #61122f;
+  font-family: 'Oxygen', sans-serif;
+}
