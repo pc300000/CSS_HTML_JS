@@ -1,40 +1,131 @@
-/* Declaring 3 different selector */
-/* Element Selector is         p{   */
-/* Class   Selector is Dot    .p{   */
-/* ID      Selector is pound  #p{   */
-  
-/** Title **/
-title {
-  color: green;
-  font-size: 36px;
+/* ********* Base styles ********* */
+/* ********* Base styles ********* */
+
+:root 
+{ /* Universal Margin, Border and Padding sizes, may be overridden for local elements */
+  --MARGIN_SIZE : 5px; /*0.5%;*/
+  --BORDER_SIZE : 5px; /*0.5%;*/
+  --BORDER_SIZE_SMALL : 2px; /*0.5%;*/
+  --PADDING_SIZE: 5px; /*0.5%;*/
+  /* Subtract Border size from Content. Otherwise, if 100%, margin overlaps onto body box padding during sizing on the right side. Because, even in a border-box setting, margin is 'not' included (only padding and border are) */
+  --BODY_ROW_WIDTH: 100% - var(--BORDER_SIZE) + var(--BORDER_SIZE);
+  /*--NEXT_CONST */
+}
+
+* 
+{
+  box-sizing: border-box;
+  margin: var(--MARGIN_SIZE);
+  /* see below (in .row) for reason */
+  /* border: solid var(--BORDER_SIZE) limegreen; ## for testing */
+  padding: var(--PADDING_SIZE);
+}
+
+
+h1 
+{
+  height: 60px;      /* content height */
   text-align: center;
 }
 
-/** Header 1 **/
-h1 {
-  color: green;
-  font-size: 36px;
+/* Simple Responsive Framework. */
+.row 
+{
+  width: var(--BODY_ROW_WIDTH);        
+  overflow: hidden;  /* to Clear the global/previous float */
+  /* margin: Leave the margins to default as otherwise, elements like h1 and div starts moving towards upper left */
+  overflow-wrap: break-word;
+  display: flex;
+  flex-wrap: wrap;
+  /* Global defines for all elements (Columns and small boxes) inside row */
+  --SMALL_BOX_WIDTH  : 120px;
+  --SMALL_BOX_HEIGHT : 40px; 
+}
+
+  /********** Large devices only (ex. Desktop, large monitors)**********/
+@media (min-width: 992px) 
+{/* Applicable when view port wodth is 992pixels and above */
+
+  .col-lg-1,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-6 
+  {
+    float: left;
+    position: relative; /* This is to ensure child (small box inside of this) will be positioned relative to this, and not HTML. Because the global default is static */
+    border: var(--BORDER_SIZE_SMALL) solid black;
+    padding-top: var(--SMALL_BOX_HEIGHT);
+    background-color: #999999;
+  }
+
+  .col-lg-1 
+  {/* For a 1 column layout -unused*/
+    width: calc(100% - (2 * var(--BORDER_SIZE)));
+  }
+
+  .col-lg-3 
+  {/* For a 3 column layout */
+    width:  calc(33.33% - (2 * var(--BORDER_SIZE)));
+    text-align: left;
+  }
+
+  .col-lg-4 
+  {/* For a 4 column layout -unused */
+    width: calc(25% - (2 * var(--BORDER_SIZE)));
+  }
+
+  .col-lg-6 
+  {/* For a 6 column layout -unused */
+    width: calc(16.66% - (2 * var(--BORDER_SIZE)));
+  }
+}
+
+  /********** Medium devices only (ex. Tablet, Phablet) **********/
+@media (min-width: 768px) and (max-width: 991px) 
+{
+  .col-md-1,
+  .col-md-2
+  {
+    float: left;
+    position: relative; 
+    border: var(--BORDER_SIZE_SMALL) solid black;
+    padding-top: var(--SMALL_BOX_HEIGHT);
+    background-color: #999999;
+  }
+
+  .col-md-1 
+  {/* For a 1 column layout */
+    width: calc(100% - (2 * var(--BORDER_SIZE)));
+  }
+
+  .col-md-2
+  {/* For a 2 column layout */
+    width: calc(50% - (2 * var(--BORDER_SIZE)));
+  }
+}
+
+  /********** Small devices only (ex. Mobile, Wearables) **********/
+@media (max-width: 767px) 
+{
+  .col-sm-3
+  {/* For a 3 column layout */
+    border: var(--BORDER_SIZE_SMALL) solid black;
+    padding-top: var(--SMALL_BOX_HEIGHT);
+    float: left;
+    position: relative; 
+    background-color: #999999;
+    width: calc(100% - (2 * var(--BORDER_SIZE)));
+  }
+}
+
+
+.small-box 
+{
+  position: absolute;
+  top:   -7px; /* ## use variables with SASS later (calc(-var(--MARGIN_SIZE) - var(--BORDER_SIZE)) px; */
+  right: -7px; /* calc(-var(--MARGIN_SIZE) - var(--BORDER_SIZE));*/
+  width:  var(--SMALL_BOX_WIDTH);
+  height: var(--SMALL_BOX_HEIGHT);
+  border: var(--BORDER_SIZE_SMALL) solid black;
   text-align: center;
-}
-
-/** Header 2 **/
-h2 {
-  color: green;
-  font-size: 24px;
-  text-align: center;
-}
-
-/* Paragraph */
-p {
-  color: blue;
-  font-size: 20px;
-  width: 200px;
-}
-
-/* Body */
-body {
-  font-size: 16px;
-  color: #fff;
-  background-color: #61122f;
-  font-family: 'Oxygen', sans-serif;
 }
