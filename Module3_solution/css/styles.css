@@ -1,0 +1,151 @@
+/** HEADER **/
+
+#header-nav {/* Override the default white from Bootstrap because the solution calls for grey color */
+  background-color: grey; 
+}
+
+.navbar-brand {/* To give more space above and below the FOOD, LLC */
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+
+}
+
+.navbar-brand h1 { /* Override the default light blue from Bootstrap because the solution calls for black color Restaurant name in a different font */
+  font-family: 'Lora', serif;
+  color: #000000;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {/* Bootstrap's default hover and focus schemes not desired */
+  text-decoration: none;
+}
+.navbar-brand p { 
+  color: #000;
+  text-transform: uppercase;
+  font-size: .7em;
+  margin-top: 15px;
+}
+.navbar-brand p span { 
+  vertical-align: middle;
+}
+.navbar{/* To fit the navbar to full width because default (Bootstrap) is 5px */
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar-nav{/* To fit the navbar-nav to full width because default (Bootstrap) is 5px */
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar-collapse{/* To fit the navbar-collapse (Chicken/Beef/Sushi) to full width because default (Bootstrap) is 5px */
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+#nav-list {
+  margin-top: 0px;
+}
+#nav-list a {
+  color: #000;
+  text-align: center;
+}
+
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+.icon-bar {/* Override the default white color from Bootstrap because the solution calls for black color */
+  border: 2px solid black;
+}
+
+.navbar {
+  margin: 0px;
+  padding: 5px 5px 0px 5px; /* top right bottom left*/
+}
+
+.visible-xs {
+  margin: 0px 5px 0 5px;   /* top right bottom left*/
+  padding: 5px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: solid black 4px;
+  background: grey;
+
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration-color:#000;
+}
+.container {
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* END HEADER */
+
+/* BEGIN BODY */
+
+.title {
+  color: #f00;
+}
+
+.title-large {
+  font-size: 2rem;
+}
+
+.title-small {
+  font-size: .5rem;
+}
+
+/* Override the default colors from Bootstrap for below classes because the solution calls for black color */
+
+.col-title{
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin: 10px;
+}
+
+.col-title-sub {
+  margin: 0px 15px 0 15px;    /* top right bottom left*/
+  border: 0px solid white;
+  padding: 0px 10px 0px 10px; /* top right bottom left*/
+  background-color: grey;
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+
+}
+
+.col-title-sub-content {
+  margin: 0px 15px 15px 15px;   /* top right bottom left*/
+  border: 0px solid white;
+  padding: 0px 10px 0px 10px;   /* top right bottom left*/
+  background-color: grey;
+  font-size: 20px; /* use relative font size instead of fixed */
+  font-weight: normal; /* Use font-weight instead of font-style for bold */
+  color: black;
+}
+
+.row {
+  margin: 0px -10px 0px -10px; /* top right bottom left*/
+  padding: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: solid black 4px;
+  background: grey;
+}
