@@ -7,8 +7,8 @@
   window.GetAllNames = names;
 
   for (var eachname in names) {
-    var firstLetter = names[eachname].charAt(0);
-    if (firstLetter.toLowerCase() == 'j') {
+    var firstLetter = names[eachname].charAt(0).toLowerCase();
+    if (firstLetter == 'j') {
       byeSpeaker.speak(names[eachname]);
     } else {
       helloSpeaker.speak(names[eachname]);
